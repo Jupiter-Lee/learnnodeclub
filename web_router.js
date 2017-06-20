@@ -110,7 +110,7 @@ router.get('/api', staticController.api);
 router.get('/rss', rss.index);
 
 // github oauth
-router.get('/auth/github', configMiddleware.github, passport.authenticate('github'));
+router.get('/auth/github', passport.authenticate('github'));
 router.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/signin' }),
   github.callback);
